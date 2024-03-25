@@ -3,9 +3,6 @@ import random as r
 list_of_alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
                    "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-# Get user input
-message = input("Enter message to encrypt: \n")
-
 # Function that will remove spaces from input string
 def remove_spaces_from_string(string : str) -> str:
     list_of_strings = string.split(" ")
@@ -57,7 +54,7 @@ def encrypt(message: str, secrete_key: str) -> str:
 
     return "".join(list_of_char)
 
-def main():
+def encrypt_main(message):
     # Remove spaces from message
     removed_spaces_message = remove_spaces_from_string(message)
 
@@ -71,7 +68,7 @@ def main():
     encrypted_message : str = encrypt(removed_spaces_message, secrete_key_string)
 
     # Output
-    print(f"Encryted value of '{message}' is {encrypted_message}.")
+    return encrypted_message
 
 if __name__ == "__main__":
-    main()
+    encrypt_main()
